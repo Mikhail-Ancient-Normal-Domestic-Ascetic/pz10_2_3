@@ -1,0 +1,80 @@
+﻿<Window x:Class="pz10_2_3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pz10_2_3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="432" Width="790">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Open" Executed="Open_Executed" />
+        <CommandBinding Command="ApplicationCommands.Save" Executed="Save_Executed" />
+
+    </Window.CommandBindings>
+    <Grid Background="DarkKhaki" Margin="0,0,0,9">
+        <Menu  HorizontalAlignment="Center" Margin="0,0,0,285" Width="790" >
+            <MenuItem Header="Файл" Background="Azure"  Width="79" Height="49"  Click="MenuItem_Click_1" RenderTransformOrigin="1.342,0.47">
+
+                <MenuItem Header="Open" Command="ApplicationCommands.Open" >
+
+                </MenuItem>
+                <MenuItem Header="Save" Command="ApplicationCommands.Save">
+
+                </MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Click" Click="Button_Click">
+
+                </MenuItem>
+
+            </MenuItem>
+            <MenuItem Header="View" Background="Azure" Height="48" Width="83" Click="MenuItem_Click"/>
+        </Menu>
+        <ToolBar HorizontalAlignment="Center" Height="66" VerticalAlignment="Top" Margin="0,56,0,0" Width="792">
+            <StackPanel Width="103"  >
+                <WrapPanel Height="50" Width="78" Background="Gray">
+                    <Button Height="25" Width="25" Background="Yellow" Click="Button_Click_1"></Button>
+                    <Button Height="25" Width="25" Background="Green" Click="Button_Click_1"/>
+                    <Button Height="25" Width="25" Background="Turquoise" Click="Button_Click_1"/>
+                    <Button Height="25" Width="25" Background="Pink" Click="Button_Click_1"/>
+                    <Button Height="25" Width="25" Background="Gray" Click="Button_Click_1"/>
+                    <Button Height="25" Width="25" Background="Black" Click="Button_Click_1"/>
+                </WrapPanel>
+
+
+            </StackPanel>
+            <StackPanel  Width="180" Orientation="Horizontal">
+
+                <ToggleButton x:Name="bolt"  ToolTip="включает жирный шрифт" Height="61" Margin="0,0,77,1" Width="55" Content="Ж" Click="Button_Click" Command="EditingCommands.ToggleBold"/>
+                <ToggleButton x:Name="italic" ToolTip="включает курсив" Margin="-70,0,77,1" Width="55" Content="K" Command="EditingCommands.ToggleItalic" Height="58"/>
+                <ToggleButton x:Name="underliune" ToolTip="включает подчеркивание" Margin="-70,0,77,1" Width="55" Content="Ч" Command="EditingCommands.ToggleUnderline"/>
+
+            </StackPanel>
+            <StackPanel Width="103" >
+
+                <ComboBox x:Name="items"  Width="94" SelectionChanged="ComboBox_SelectionChanged"/>
+
+            </StackPanel>
+            <StackPanel Width="100">
+                <ComboBox x:Name="items1" SelectionChanged="ComboBox_SelectionChanged_1" Width="100"></ComboBox>
+            </StackPanel>
+            <StackPanel>
+
+            </StackPanel>
+            <StackPanel Width="97" >
+                <ComboBox x:Name="items2" SelectionChanged="ComboBox_SelectionChanged_2">
+
+                </ComboBox>
+            </StackPanel>
+
+        </ToolBar>
+
+        <RichTextBox x:Name="afas" HorizontalAlignment="Left" Height="298" VerticalAlignment="Top" Width="792" Margin="0,111,0,0" TextChanged="afas_TextChanged" SelectionChanged="afas_SelectionChanged">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+    </Grid>
+</Window>
